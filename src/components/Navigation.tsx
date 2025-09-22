@@ -1,12 +1,18 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 import { ShimmerButton } from '@/registry/magicui/shimmer-button';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +23,18 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   const navItems = [
     { name: 'About Us', id: 'about' },
@@ -85,31 +103,63 @@ export default function Navigation() {
         </button>
       </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="lg:hidden fixed top-0 left-0 right-0 bottom-0 bg-black/95 backdrop-blur-md z-40">
-          {/* Close button */}
-          <button
-            className="absolute top-6 right-4 text-white p-2"
+      {/* Mobile Navigation Modal */}
+      {isMenuOpen && mounted && createPortal(
+        <>
+          {/* Modal backdrop */}
+          <div
+            className="lg:hidden fixed inset-0 bg-black z-[100] transition-opacity duration-300"
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh'
+            }}
             onClick={() => setIsMenuOpen(false)}
+          />
+
+          {/* Modal content */}
+          <div
+            className="lg:hidden fixed inset-0 z-[101] flex flex-col"
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh'
+            }}
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-          <div className="flex flex-col h-full pt-24 px-4 pb-8">
-            <div className="flex flex-col space-y-2 flex-1">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-left px-4 py-4 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-lg cursor-pointer"
-                >
-                  {item.name}
-                </button>
-              ))}
+            {/* Header with close button */}
+            <div className="flex items-center justify-between p-6 border-b border-white/10">
+              <span className="text-white font-semibold text-xl tracking-wide">KIRAR</span>
+              <button
+                className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
             </div>
-            <div className="mt-auto pt-8">
+
+            {/* Menu items */}
+            <div className="flex-1 flex flex-col justify-center px-6">
+              <div className="space-y-6">
+                {navItems.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.id)}
+                    className="block w-full text-left text-white text-3xl font-light hover:text-white/70 transition-colors duration-200"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Footer with contact button */}
+            <div className="p-6 border-t border-white/10">
               <ShimmerButton
                 className="w-full text-lg py-4 cursor-pointer"
                 background="rgba(255, 255, 255, 0.1)"
@@ -121,7 +171,8 @@ export default function Navigation() {
               </ShimmerButton>
             </div>
           </div>
-        </div>
+        </>,
+        document.body
       )}
     </nav>
   );
