@@ -1,0 +1,24 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="borealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#4a7c23;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#5d8f2a;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#4a7c23;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#3a6b1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d5016;stop-opacity:1" />
+    </linearGradient>
+    <!-- Boreal forest pattern with evergreen trees -->
+    <pattern id="borealTrees" x="0" y="0" width="120" height="200" patternUnits="userSpaceOnUse">
+      <!-- Large evergreen trees -->
+      <polygon points="20,180 30,120 40,180" fill="#1a4a1a" opacity="0.7"/>
+      <polygon points="18,160 22,140 26,160" fill="#2a5a2a" opacity="0.8"/>
+      <polygon points="60,180 75,100 90,180" fill="#1a4a1a" opacity="0.6"/>
+      <polygon points="57,150 62,130 67,150" fill="#2a5a2a" opacity="0.7"/>
+      <polygon points="100,180 110,130 120,180" fill="#1a4a1a" opacity="0.8"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#borealGrad)"/>
+  <rect width="800" height="600" fill="url(#borealTrees)"/>
+  <rect width="800" height="600" fill="rgba(0,0,0,0.2)"/>
+</svg>

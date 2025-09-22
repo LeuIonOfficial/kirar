@@ -1,0 +1,42 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ctaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3b2e;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#2d4a2d;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#3a5a3a;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#2d4a2d;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#1f3a1f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f1a0f;stop-opacity:1" />
+    </linearGradient>
+    <!-- Forest canopy pattern -->
+    <pattern id="canopyPattern" x="0" y="0" width="200" height="300" patternUnits="userSpaceOnUse">
+      <!-- Tree canopies overlapping -->
+      <circle cx="50" cy="200" r="40" fill="#2a5a2a" opacity="0.6"/>
+      <circle cx="150" cy="180" r="35" fill="#1a4a1a" opacity="0.7"/>
+      <circle cx="100" cy="220" r="30" fill="#3a6a3a" opacity="0.5"/>
+      <circle cx="25" cy="250" r="25" fill="#2a5a2a" opacity="0.6"/>
+      <circle cx="175" cy="240" r="28" fill="#1a4a1a" opacity="0.8"/>
+      <!-- Tree trunks -->
+      <rect x="48" y="240" width="4" height="40" fill="#3e2723" opacity="0.8"/>
+      <rect x="148" y="215" width="4" height="35" fill="#3e2723" opacity="0.9"/>
+      <rect x="98" y="250" width="4" height="30" fill="#3e2723" opacity="0.7"/>
+    </pattern>
+    <!-- Bokeh light effects -->
+    <radialGradient id="bokeh1">
+      <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#fef3c7;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="bokeh2">
+      <stop offset="0%" style="stop-color:#bbf7d0;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#bbf7d0;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#ctaGrad)"/>
+  <rect width="1200" height="800" fill="url(#canopyPattern)"/>
+  <!-- Bokeh effects -->
+  <circle cx="200" cy="150" r="80" fill="url(#bokeh1)"/>
+  <circle cx="1000" cy="200" r="60" fill="url(#bokeh2)"/>
+  <circle cx="300" cy="650" r="100" fill="url(#bokeh1)"/>
+  <circle cx="800" cy="600" r="70" fill="url(#bokeh2)"/>
+  <circle cx="600" cy="400" r="90" fill="url(#bokeh1)"/>
+</svg>

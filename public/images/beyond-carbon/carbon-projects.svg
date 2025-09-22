@@ -1,0 +1,27 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="beyondCarbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#4a7c23;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#5d8f2a;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#4a7c23;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#3a6b1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d5016;stop-opacity:1" />
+    </linearGradient>
+    <!-- Mixed landscape pattern -->
+    <pattern id="mixedPattern" x="0" y="0" width="160" height="200" patternUnits="userSpaceOnUse">
+      <!-- Various forest types -->
+      <polygon points="30,160 40,120 50,160" fill="#1a4a1a" opacity="0.7"/>
+      <circle cx="80" cy="140" r="15" fill="#2a5a2a" opacity="0.6"/>
+      <polygon points="120,170 135,110 150,170" fill="#1a4a1a" opacity="0.8"/>
+      <rect x="78" y="140" width="4" height="25" fill="#3a2a1a"/>
+      <rect x="38" y="160" width="4" height="20" fill="#3a2a1a"/>
+      <rect x="133" y="170" width="4" height="15" fill="#3a2a1a"/>
+      <!-- Ground vegetation -->
+      <rect x="60" y="180" width="2" height="10" fill="#4caf50" opacity="0.5"/>
+      <rect x="100" y="175" width="2" height="12" fill="#4caf50" opacity="0.6"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#beyondCarbonGrad)"/>
+  <rect width="800" height="600" fill="url(#mixedPattern)"/>
+</svg>
