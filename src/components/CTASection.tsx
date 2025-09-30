@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { ShimmerButton } from '@/registry/magicui/shimmer-button';
+import Image from "next/image";
+import { ShimmerButton } from "@/registry/magicui/shimmer-button";
 
 export default function CTASection() {
   return (
@@ -35,7 +35,9 @@ export default function CTASection() {
             {/* Section Label */}
             <div className="flex items-center justify-center mb-8">
               <div className="w-2 h-2 bg-teal-500 rounded-full mr-3"></div>
-              <span className="text-teal-500 text-sm font-medium uppercase tracking-wider">Contact Us</span>
+              <span className="text-teal-500 text-sm font-medium uppercase tracking-wider">
+                Contact Us
+              </span>
             </div>
 
             {/* Main Heading */}
@@ -45,8 +47,10 @@ export default function CTASection() {
 
             {/* Description */}
             <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
-              Whether you represent an organization, an investor, or a community partner, we&apos;re here to create
-              impact together. Let&apos;s connect and explore how we can accelerate climate action side by side.
+              Whether you represent an organization, an investor, or a community
+              partner, we&apos;re here to create impact together. Let&apos;s
+              connect and explore how we can accelerate climate action side by
+              side.
             </p>
 
             {/* CTA Button */}
@@ -63,7 +67,12 @@ export default function CTASection() {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
               </svg>
             </ShimmerButton>
           </div>

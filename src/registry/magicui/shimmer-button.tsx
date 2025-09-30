@@ -62,7 +62,6 @@ const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
         <div className="insert-0 absolute h-full w-full">
           <div className="h-full w-full [background:linear-gradient(var(--background),var(--background))_padding-box,conic-gradient(from_calc(270deg-(var(--shimmer-size)*0.5)),transparent_0,var(--shimmer-color)_var(--shimmer-size),transparent_calc(var(--shimmer-size)*1.5))_border-box] [border:var(--shimmer-size)_solid_transparent] [border-radius:var(--border-radius)]" />
         </div>
-
       </button>
     );
   },

@@ -1,17 +1,22 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { ShimmerButton } from '@/registry/magicui/shimmer-button';
+import Image from "next/image";
+import { ShimmerButton } from "@/registry/magicui/shimmer-button";
 
 export default function FeaturedProjects() {
   return (
-    <section id="featured-projects" className="bg-gray-50 py-20 px-4 md:px-8 lg:px-16">
+    <section
+      id="featured-projects"
+      className="bg-gray-50 py-20 px-4 md:px-8 lg:px-16"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
             <div className="w-2 h-2 bg-teal-500 rounded-full mr-3"></div>
-            <span className="text-teal-500 text-sm font-medium uppercase tracking-wider">Our Projects</span>
+            <span className="text-teal-500 text-sm font-medium uppercase tracking-wider">
+              Our Projects
+            </span>
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6">
@@ -19,7 +24,8 @@ export default function FeaturedProjects() {
           </h2>
 
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            We support a select number of projects with ecological integrity and strong community benefits.
+            We support a select number of projects with ecological integrity and
+            strong community benefits.
           </p>
         </div>
 
@@ -56,7 +62,12 @@ export default function FeaturedProjects() {
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
                   </svg>
                 </ShimmerButton>
               </div>
@@ -94,7 +105,12 @@ export default function FeaturedProjects() {
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
                   </svg>
                 </ShimmerButton>
               </div>

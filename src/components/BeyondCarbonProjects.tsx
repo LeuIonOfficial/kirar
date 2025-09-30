@@ -1,33 +1,38 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
+import { useState } from "react";
+import Image from "next/image";
 
 export default function BeyondCarbonProjects() {
-  const [expandedItems, setExpandedItems] = useState<{[key: number]: boolean}>({ 0: true }); // First item expanded by default
+  const [expandedItems, setExpandedItems] = useState<{
+    [key: number]: boolean;
+  }>({ 0: true }); // First item expanded by default
 
   const accordionItems = [
     {
-      title: 'Climate Resilience Consulting',
-      description: 'Advisory services to help communities and organizations adapt to climate change and implement sustainable practices.',
-      icon: '🌊'
+      title: "Climate Resilience Consulting",
+      description:
+        "Advisory services to help communities and organizations adapt to climate change and implement sustainable practices.",
+      icon: "🌊",
     },
     {
-      title: 'Ecosystem Restoration',
-      description: 'Comprehensive restoration programs to rebuild degraded ecosystems and enhance biodiversity.',
-      icon: '🌱'
+      title: "Ecosystem Restoration",
+      description:
+        "Comprehensive restoration programs to rebuild degraded ecosystems and enhance biodiversity.",
+      icon: "🌱",
     },
     {
-      title: 'Renewable Energy Solutions',
-      description: 'Development and implementation of clean energy solutions for sustainable community development.',
-      icon: '⚡'
-    }
+      title: "Renewable Energy Solutions",
+      description:
+        "Development and implementation of clean energy solutions for sustainable community development.",
+      icon: "⚡",
+    },
   ];
 
   const toggleItem = (index: number) => {
-    setExpandedItems(prev => ({
+    setExpandedItems((prev) => ({
       ...prev,
-      [index]: !prev[index]
+      [index]: !prev[index],
     }));
   };
 
@@ -65,61 +70,75 @@ export default function BeyondCarbonProjects() {
             <div className="mb-12">
               <div className="flex items-center mb-6">
                 <div className="w-2 h-2 bg-teal-500 rounded-full mr-3"></div>
-                <span className="text-teal-500 text-sm font-medium uppercase tracking-wider">Other Activities</span>
+                <span className="text-teal-500 text-sm font-medium uppercase tracking-wider">
+                  Other Activities
+                </span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-12">
                 Beyond Carbon Projects
               </h2>
 
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                Beyond our core projects, we provide advisory services, build partnerships,
-                and share insights that drive climate action at scale.
+                We are deeply committed to supporting those affected by
+                humanitarian crises worldwide. As part of this commitment, we
+                pledge to donate 5% of our profits to organisations providing
+                critical aid, relief, and long-term support in times of urgent
+                need. By dedicating a portion of our success to these causes, we
+                aim not only to provide immediate assistance but also to help
+                rebuild lives and strengthen communities facing extraordinary
+                challenges. Standing with humanity in its most vulnerable
+                moments is not just part of our mission—it is part of who we
+                are.
               </p>
             </div>
 
             {/* Accordion */}
             <div className="space-y-4">
               {accordionItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="border-b border-gray-200 pb-4"
-                >
+                <div key={index} className="border-b border-gray-200 pb-4">
                   <button
                     onClick={() => toggleItem(index)}
                     className="w-full flex items-center justify-between text-left group hover:text-teal-600 transition-colors duration-300"
                   >
                     <div className="flex items-center space-x-4">
-                      <div className="text-teal-500 text-xl">
-                        {item.icon}
-                      </div>
+                      <div className="text-teal-500 text-xl">{item.icon}</div>
                       <span className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-teal-600 transition-colors duration-300">
                         {item.title}
                       </span>
                     </div>
 
                     <div className="flex-shrink-0 ml-4">
-                      <div className={`w-6 h-6 transform transition-transform duration-300 ${
-                        expandedItems[index] ? 'rotate-180' : 'rotate-0'
-                      }`}>
+                      <div
+                        className={`w-6 h-6 transform transition-transform duration-300 ${
+                          expandedItems[index] ? "rotate-180" : "rotate-0"
+                        }`}
+                      >
                         <svg
                           className="w-full h-full text-gray-400 group-hover:text-teal-600 transition-colors duration-300"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
                         </svg>
                       </div>
                     </div>
                   </button>
 
                   {/* Expanded Content */}
-                  <div className={`overflow-hidden transition-all duration-500 ${
-                    expandedItems[index]
-                      ? 'max-h-32 opacity-100 mt-4'
-                      : 'max-h-0 opacity-0'
-                  }`}>
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ${
+                      expandedItems[index]
+                        ? "max-h-32 opacity-100 mt-4"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
                     <p className="text-gray-600 leading-relaxed pl-12">
                       {item.description}
                     </p>

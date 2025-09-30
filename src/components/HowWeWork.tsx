@@ -1,24 +1,27 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function HowWeWork() {
   const workItems = [
     {
-      title: 'Reforestation',
-      description: 'Restoring degraded land and creating new forests to boost biodiversity and capture CO₂.',
-      imageSrc: '/images/how-we-work/reforestation.svg',
+      title: "Reforestation",
+      description:
+        "Restoring degraded land and creating new forests to boost biodiversity and capture CO₂.",
+      imageSrc: "/images/how-we-work/reforestation.svg",
     },
     {
-      title: 'Community Resilience',
-      description: 'Building sustainable livelihoods and empowering local communities through education, training, and economic opportunities.',
-      imageSrc: '/images/how-we-work/community-resilience.svg',
+      title: "Community Resilience",
+      description:
+        "Building sustainable livelihoods and empowering local communities through education, training, and economic opportunities.",
+      imageSrc: "/images/how-we-work/community-resilience.svg",
     },
     {
-      title: 'Forest Protection',
-      description: 'Preserving existing forests and protecting biodiversity through conservation initiatives and sustainable management practices.',
-      imageSrc: '/images/how-we-work/forest-protection.svg',
-    }
+      title: "Forest Protection",
+      description:
+        "Preserving existing forests and protecting biodiversity through conservation initiatives and sustainable management practices.",
+      imageSrc: "/images/how-we-work/forest-protection.svg",
+    },
   ];
 
   return (
@@ -28,15 +31,18 @@ export default function HowWeWork() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
             <div className="w-2 h-2 bg-teal-500 rounded-full mr-3"></div>
-            <span className="text-teal-500 text-sm font-medium uppercase tracking-wider">What We Do</span>
+            <span className="text-teal-500 text-sm font-medium uppercase tracking-wider">
+              What We Do
+            </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-12">
             How We Work
           </h2>
 
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            We collaborate with high-integrity carbon initiatives to drive impactful climate action through
+            We collaborate with high-integrity carbon initiatives to drive
+            impactful climate action through
           </p>
         </div>
 
@@ -104,7 +110,6 @@ export default function HowWeWork() {
 
                 {/* Subtle border highlight on hover */}
                 <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-white/10 transition-all duration-500"></div>
-
               </div>
             </div>
           ))}
