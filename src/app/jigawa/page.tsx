@@ -83,7 +83,7 @@ export default function JigawaProject() {
                 The Jigawa project works with local communities in Nigeria to
                 restore degraded farmlands and establish new forests. Through
                 innovative agroforestry techniques and community empowerment,
-                we're creating sustainable livelihoods while combating
+                we&apos;re creating sustainable livelihoods while combating
                 desertification.
               </p>
 

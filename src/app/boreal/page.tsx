@@ -26,7 +26,7 @@ export default function BorealProject() {
             Boreal
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
-            Regenerating the world's largest terrestrial biome through
+            Regenerating the world&apos;s largest terrestrial biome through
             sustainable forestry and ecosystem restoration.
           </p>
 
@@ -81,9 +81,9 @@ export default function BorealProject() {
 
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
                 The Boreal forest project focuses on large-scale ecosystem
-                restoration in one of the world's most critical carbon storage
+                restoration in one of the world&apos;s most critical carbon storage
                 regions. Through sustainable forestry practices and community
-                engagement, we're working to restore degraded areas while
+                engagement, we&apos;re working to restore degraded areas while
                 supporting local livelihoods.
               </p>
 

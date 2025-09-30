@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { ShimmerButton } from "@/registry/magicui/shimmer-button";
 
 export default function AboutSection() {

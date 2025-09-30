@@ -53,22 +53,24 @@ export default function Navigation() {
     setIsMenuOpen(false); // Close mobile menu after clicking
   };
 
-  const handleNavigation = (item: any) => {
+  const handleNavigation = (item: { name: string; id?: string; href?: string; type: string }) => {
     // Prevent navigation during SSR
     if (!mounted) return;
 
     switch (item.type) {
       case "scroll":
-        if (pathname === "/") {
+        if (pathname === "/" && item.id) {
           scrollToSection(item.id);
-        } else {
+        } else if (item.id) {
           window.location.href = `/#${item.id}`;
           setIsMenuOpen(false);
         }
         break;
       case "link":
-        window.location.href = item.href;
-        setIsMenuOpen(false);
+        if (item.href) {
+          window.location.href = item.href;
+          setIsMenuOpen(false);
+        }
         break;
       default:
         break;
