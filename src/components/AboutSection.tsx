@@ -3,6 +3,12 @@
 import { ShimmerButton } from "@/registry/magicui/shimmer-button";
 
 export default function AboutSection() {
+  const scrollToHowWeWork = () => {
+    const element = document.getElementById("how-we-work");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section id="about" className="bg-white py-20 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
@@ -31,10 +37,11 @@ export default function AboutSection() {
           {/* CTA Button */}
           <div className="mt-12">
             <ShimmerButton
-              className="group mx-auto font-medium text-base flex items-center space-x-3"
+              className="group mx-auto font-medium text-base flex items-center space-x-3 cursor-pointer"
               background="rgba(31, 41, 55, 1)"
               shimmerColor="#ffffff"
               shimmerSize="0.1em"
+              onClick={scrollToHowWeWork}
             >
               <span>Explore More About Us</span>
               <svg
@@ -58,32 +65,31 @@ export default function AboutSection() {
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Stat 1 */}
           <div className="text-center border-r border-gray-200 last:border-r-0 pr-8 md:pr-12">
-            <div className="text-6xl md:text-7xl lg:text-8xl font-light text-gray-900 mb-4">
+            <div className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">
               500k+
             </div>
             <p className="text-gray-600 text-lg leading-relaxed max-w-xs mx-auto">
-              <span className="font-medium">Restoring:</span> hectares
+              Restoring hectares
             </p>
           </div>
 
           {/* Stat 2 */}
           <div className="text-center border-r border-gray-200 last:border-r-0 pr-8 md:pr-12">
-            <div className="text-6xl md:text-7xl lg:text-8xl font-light text-gray-900 mb-4">
+            <div className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">
               30k+
             </div>
             <p className="text-gray-600 text-lg leading-relaxed max-w-xs mx-auto">
-              <span className="font-medium">Improving lives:</span> people
+              Improving lives
             </p>
           </div>
 
           {/* Stat 3 */}
           <div className="text-center">
-            <div className="text-6xl md:text-7xl lg:text-8xl font-light text-gray-900 mb-4">
+            <div className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4">
               50m+
             </div>
             <p className="text-gray-600 text-lg leading-relaxed max-w-xs mx-auto">
-              <span className="font-medium">Removing:</span> tonnes of carbon
-              emissions
+              Removing t/CO2e
             </p>
           </div>
         </div>

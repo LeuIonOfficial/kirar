@@ -11,6 +11,13 @@ export default function HeroSection() {
     setIsVisible(true);
   }, []);
 
+  const scrollToProjects = () => {
+    const element = document.getElementById("projects");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -31,7 +38,7 @@ export default function HeroSection() {
           className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-white mb-6 leading-tight">
             <span className="block">Kinetic International</span>
             <span className="block">
               Regenerative Agriculture & Reforestation
@@ -48,10 +55,11 @@ export default function HeroSection() {
 
           {/* CTA Button */}
           <ShimmerButton
-            className="group mx-auto font-medium text-base flex items-center space-x-3"
+            className="group mx-auto font-medium text-base flex items-center space-x-3 cursor-pointer"
             background="rgba(0, 0, 0, 0.3)"
             shimmerColor="#ffffff"
             shimmerSize="0.1em"
+            onClick={scrollToProjects}
           >
             <span>Explore Our Projects</span>
             <svg

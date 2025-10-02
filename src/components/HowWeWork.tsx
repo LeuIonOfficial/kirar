@@ -11,13 +11,13 @@ export default function HowWeWork() {
       imageSrc: "/images/how-we-work/reforestation.svg",
     },
     {
-      title: "Community Resilience",
+      title: "Regenerative Agriculture",
       description:
         "Building sustainable livelihoods and empowering local communities through education, training, and economic opportunities.",
       imageSrc: "/images/how-we-work/community-resilience.svg",
     },
     {
-      title: "Forest Protection",
+      title: "Partnerships",
       description:
         "Preserving existing forests and protecting biodiversity through conservation initiatives and sustainable management practices.",
       imageSrc: "/images/how-we-work/forest-protection.svg",

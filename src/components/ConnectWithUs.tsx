@@ -6,6 +6,7 @@ import {
   Geography,
   Marker,
 } from "react-simple-maps";
+import { useRouter } from "next/navigation";
 import { ShimmerButton } from "@/registry/magicui/shimmer-button";
 
 interface GeoFeature {
@@ -14,6 +15,7 @@ interface GeoFeature {
 }
 
 export default function ConnectWithUs() {
+  const router = useRouter();
   const locations = [
     {
       name: "United Kingdom",
@@ -67,10 +69,11 @@ export default function ConnectWithUs() {
           </p>
 
           <ShimmerButton
-            className="group mx-auto font-medium text-base flex items-center space-x-3"
+            className="group mx-auto font-medium text-base flex items-center space-x-3 cursor-pointer"
             background="rgba(31, 41, 55, 1)"
             shimmerColor="#ffffff"
             shimmerSize="0.1em"
+            onClick={() => router.push("/contact")}
           >
             <span>Contact Us</span>
             <svg

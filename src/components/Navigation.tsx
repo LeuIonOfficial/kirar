@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 
-import { ShimmerButton } from "@/registry/magicui/shimmer-button";
-
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,9 +38,10 @@ export default function Navigation() {
 
   const navItems = [
     { name: "About Us", id: "about", type: "scroll" },
-    { name: "Boreal", href: "/boreal", type: "link" },
-    { name: "Jigawa", href: "/jigawa", type: "link" },
+    { name: "Projects", id: "projects", type: "scroll" },
     { name: "Other Activities", id: "how-we-work", type: "scroll" },
+    { name: "Team", href: "/team", type: "link" },
+    { name: "Contact Us", href: "/contact", type: "link" },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -85,7 +84,7 @@ export default function Navigation() {
           : "py-6 bg-transparent"
       }`}
     >
-      <div className="flex items-center justify-between max-w-7xl mx-auto">
+      <div className="flex items-center justify-between max-w-7xl mx-auto w-full">
         {/* Logo */}
         <div className="flex items-center">
           <button
@@ -96,32 +95,19 @@ export default function Navigation() {
           </button>
         </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-1">
-          <div className="flex items-center bg-black/20 backdrop-blur-sm rounded-full px-2 py-2">
+        {/* Desktop Navigation - Centered */}
+        <div className="hidden lg:flex items-center space-x-1 absolute left-1/2 transform -translate-x-1/2">
+          <div className="flex items-center space-x-2">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => handleNavigation(item)}
-                className="px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200 text-sm font-medium cursor-pointer"
+                className="px-5 py-2 text-white/90 hover:text-white transition-all duration-200 text-sm font-medium cursor-pointer"
               >
                 {item.name}
               </button>
             ))}
           </div>
-        </div>
-
-        {/* Right side - Language + Contact */}
-        <div className="hidden lg:flex items-center space-x-4">
-          <ShimmerButton
-            className="text-sm font-medium cursor-pointer"
-            background="rgba(255, 255, 255, 0.1)"
-            shimmerColor="#ffffff"
-            shimmerSize="0.08em"
-            onClick={() => scrollToSection("contact")}
-          >
-            Contact Us
-          </ShimmerButton>
         </div>
 
         {/* Mobile menu button */}
@@ -217,18 +203,6 @@ export default function Navigation() {
                 </div>
               </div>
 
-              {/* Footer with contact button */}
-              <div className="p-6 border-t border-white/10">
-                <ShimmerButton
-                  className="w-full text-lg py-4 cursor-pointer"
-                  background="rgba(255, 255, 255, 0.1)"
-                  shimmerColor="#ffffff"
-                  shimmerSize="0.08em"
-                  onClick={() => scrollToSection("contact")}
-                >
-                  Contact Us
-                </ShimmerButton>
-              </div>
             </div>
           </>,
           document.body,
